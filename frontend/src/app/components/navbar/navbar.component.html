@@ -1,0 +1,62 @@
+<nav class="portfolio-navbar" [class.scrolled]="isScrolled">
+  <div class="container-xl d-flex align-items-center justify-content-between">
+    <!-- Brand Logo -->
+    <a href="#hero" class="brand-logo d-flex align-items-center gap-2 text-decoration-none">
+      <div class="logo-icon">
+        <span>SB</span>
+      </div>
+      <div class="logo-text">
+        <span class="name">Shubham Bhavar</span>
+        <span class="role-badge">Dev</span>
+      </div>
+    </a>
+
+    <!-- Desktop Navigation Links -->
+    <ul class="nav-links d-none d-lg-flex align-items-center list-unstyled m-0 gap-1">
+      <li *ngFor="let link of navLinks">
+        <a [href]="link.href" 
+           class="nav-link-item" 
+           [class.active]="activeSection === link.id">
+          {{ link.label }}
+        </a>
+      </li>
+    </ul>
+
+    <!-- Header Actions (Resume & Mobile Toggle) -->
+    <div class="d-flex align-items-center gap-3">
+      <a href="#contact" class="btn-primary-glow d-none d-md-inline-flex px-3 py-2 text-sm">
+        <i class="bi bi-send-fill"></i>
+        <span>Let's Talk</span>
+      </a>
+
+      <!-- Mobile Hamburger Button -->
+      <button class="mobile-toggle-btn d-lg-none" 
+              (click)="toggleMobileMenu()" 
+              [attr.aria-expanded]="isMobileMenuOpen"
+              aria-label="Toggle navigation">
+        <i class="bi" [class.bi-list]="!isMobileMenuOpen" [class.bi-x-lg]="isMobileMenuOpen"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Navigation Drawer -->
+  <div class="mobile-nav-drawer d-lg-none" [class.open]="isMobileMenuOpen">
+    <ul class="mobile-links list-unstyled m-0">
+      <li *ngFor="let link of navLinks">
+        <a [href]="link.href" 
+           class="mobile-link-item" 
+           [class.active]="activeSection === link.id"
+           (click)="closeMobileMenu()">
+          <span>{{ link.label }}</span>
+          <i class="bi bi-arrow-right-short text-cyan"></i>
+        </a>
+      </li>
+      <li class="pt-3">
+        <a href="#contact" class="btn-primary-glow w-100 justify-content-center" (click)="closeMobileMenu()">
+          <i class="bi bi-send-fill"></i>
+          <span>Let's Talk</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>

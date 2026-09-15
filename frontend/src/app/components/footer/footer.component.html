@@ -1,0 +1,83 @@
+<footer class="portfolio-footer position-relative pt-5 pb-4">
+  <div class="container-xl position-relative z-2">
+    
+    <div class="row g-4 justify-content-between pb-5 border-bottom border-secondary border-opacity-25">
+      
+      <!-- Brand & Bio Summary Column -->
+      <div class="col-lg-5">
+        <div class="d-flex align-items-center gap-2 mb-3">
+          <div class="footer-logo-icon">SB</div>
+          <h3 class="text-white m-0 fs-4 fw-bold">Shubham Bhavar</h3>
+        </div>
+
+        <p class="text-muted text-sm mb-4 pe-lg-4">
+          Full Stack Developer &amp; Data Science Graduate based in Pune, Maharashtra. Passionate about building high-performance, responsive web architectures and interactive digital experiences.
+        </p>
+
+        <div class="d-flex align-items-center gap-2">
+          <a *ngFor="let social of socialLinks" 
+             [href]="social.href" 
+             target="_blank" 
+             rel="noopener noreferrer" 
+             class="footer-social-btn" 
+             [attr.aria-label]="social.label">
+            <i class="bi {{ social.icon }}"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Quick Links Column -->
+      <div class="col-6 col-lg-3">
+        <h5 class="footer-col-title text-white text-xs font-mono-code text-uppercase mb-3 fw-bold">Quick Navigation</h5>
+        <ul class="list-unstyled m-0 d-flex flex-column gap-2">
+          <li *ngFor="let link of quickLinks">
+            <a [href]="link.href" class="footer-nav-link text-sm">
+              <i class="bi bi-chevron-right text-cyan text-xs me-1"></i> {{ link.label }}
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Contact Info Summary Column -->
+      <div class="col-6 col-lg-4">
+        <h5 class="footer-col-title text-white text-xs font-mono-code text-uppercase mb-3 fw-bold">Direct Contacts</h5>
+        <ul class="list-unstyled m-0 d-flex flex-column gap-2 text-sm text-muted">
+          <li class="d-flex align-items-center gap-2">
+            <i class="bi bi-geo-alt-fill text-cyan"></i>
+            <span>Pune, Maharashtra, India</span>
+          </li>
+          <li class="d-flex align-items-center gap-2">
+            <i class="bi bi-envelope-fill text-cyan"></i>
+            <a href="mailto:shubhambhavar2821@gmail.com" class="text-muted text-decoration-none hover-text-white">
+              shubhambhavar2821&#64;gmail.com
+            </a>
+          </li>
+          <li class="d-flex align-items-center gap-2">
+            <i class="bi bi-whatsapp text-success"></i>
+            <a href="https://wa.me/919890982446" target="_blank" class="text-muted text-decoration-none hover-text-white">
+              +91 9890982446
+            </a>
+          </li>
+        </ul>
+
+        <div class="mt-4">
+          <a href="#hero" (click)="scrollToTop(); $event.preventDefault();" class="btn-outline-glow py-2 px-3 text-xs">
+            <i class="bi bi-arrow-up-short fs-6"></i> Back to Top
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Bottom Copyright Bar -->
+    <div class="pt-4 d-flex flex-wrap align-items-center justify-content-between gap-3 text-xs text-dim font-mono-code">
+      <div>
+        &copy; {{ currentYear }} <span class="text-white">Shubham Bhavar</span>. All Rights Reserved.
+      </div>
+      <div>
+        Built with Angular 22, TypeScript, Bootstrap, Three.js &amp; Node.js
+      </div>
+    </div>
+
+  </div>
+</footer>

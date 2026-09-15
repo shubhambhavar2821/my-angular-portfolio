@@ -1,0 +1,132 @@
+<section id="projects" class="projects-section section-padding">
+  <div class="container-xl">
+    
+    <!-- Section Header -->
+    <div class="text-center mb-5">
+      <div class="section-tag">
+        <i class="bi bi-code-square"></i>
+        <span>Featured Portfolio</span>
+      </div>
+      <h2 class="section-title">
+        Selected <span class="gradient-text">Projects</span>
+      </h2>
+      <p class="section-subtitle">
+        Real-world applications built with modern frontend frameworks and full-stack web technologies.
+      </p>
+    </div>
+
+    <!-- Projects Grid -->
+    <div class="row g-4 justify-content-center">
+      <div class="col-lg-6" *ngFor="let project of projects">
+        <div class="project-card glass-card card-3d p-4 p-md-5 h-100 d-flex flex-column justify-content-between">
+          
+          <div>
+            <!-- Top Bar: Category & Icon -->
+            <div class="d-flex align-items-center justify-content-between mb-4">
+              <span class="project-category-badge font-mono-code">
+                <i class="bi bi-tag-fill me-1"></i> {{ project.category }}
+              </span>
+              
+              <div class="project-icon-box" [style.background]="project.accentGradient">
+                <i class="bi {{ project.icon }} text-cyan"></i>
+              </div>
+            </div>
+
+            <!-- Title -->
+            <h3 class="project-title text-white mb-3">
+              {{ project.title }}
+            </h3>
+
+            <!-- Description -->
+            <p class="project-desc text-muted mb-4">
+              {{ project.description }}
+            </p>
+
+            <!-- Key Features -->
+            <div class="project-features-box mb-4 p-3 rounded">
+              <div class="text-xs text-uppercase font-mono-code text-cyan mb-2 fw-bold">
+                <i class="bi bi-stars me-1"></i> Key Highlights:
+              </div>
+              <ul class="list-unstyled m-0">
+                <li *ngFor="let f of project.features.slice(0, 2)" class="d-flex align-items-start gap-2 mb-1 text-light text-sm">
+                  <i class="bi bi-chevron-right text-purple mt-1 flex-shrink-0"></i>
+                  <span>{{ f }}</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Tech Stack Badges -->
+            <div class="mb-4">
+              <div class="d-flex flex-wrap gap-2">
+                <span class="tech-pill" *ngFor="let tech of project.technologies">
+                  {{ tech }}
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bottom Action Buttons -->
+          <div class="project-actions d-flex flex-wrap gap-3 pt-3 border-top border-secondary border-opacity-25">
+            <button (click)="openProjectDetails(project)" class="btn-primary-glow text-sm flex-grow-1">
+              <i class="bi bi-eye-fill"></i> View Details
+            </button>
+
+            <a [href]="project.githubUrl" target="_blank" rel="noopener noreferrer" class="btn-glass text-sm" aria-label="GitHub repository">
+              <i class="bi bi-github text-cyan"></i> GitHub
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- More on GitHub banner -->
+    <div class="text-center mt-5">
+      <p class="text-muted mb-3">Want to explore more source code repositories?</p>
+      <a href="https://github.com/shubhambhavar2821" target="_blank" rel="noopener noreferrer" class="btn-glass px-4">
+        <i class="bi bi-github text-cyan me-2"></i> Visit GitHub Profile (@shubhambhavar2821)
+      </a>
+    </div>
+
+  </div>
+
+  <!-- Project Details Modal -->
+  <div class="custom-modal-backdrop" *ngIf="selectedProject" (click)="closeProjectDetails()">
+    <div class="custom-modal-card glass-card p-4 p-md-5" (click)="$event.stopPropagation()">
+      <div class="d-flex align-items-center justify-content-between mb-3 border-bottom border-secondary border-opacity-25 pb-3">
+        <div>
+          <span class="project-category-badge font-mono-code text-xs mb-1 d-inline-block">{{ selectedProject.category }}</span>
+          <h3 class="text-white m-0">{{ selectedProject.title }}</h3>
+        </div>
+        <button (click)="closeProjectDetails()" class="close-btn" aria-label="Close modal">
+          <i class="bi bi-x-lg"></i>
+        </button>
+      </div>
+
+      <p class="text-light mb-4">{{ selectedProject.description }}</p>
+
+      <h5 class="text-cyan text-sm font-mono-code text-uppercase mb-3 fw-bold">Features &amp; Technical Capabilities:</h5>
+      <ul class="list-unstyled mb-4">
+        <li *ngFor="let f of selectedProject.features" class="d-flex align-items-start gap-2 mb-2 text-muted">
+          <i class="bi bi-check2-circle text-cyan mt-1 flex-shrink-0"></i>
+          <span>{{ f }}</span>
+        </li>
+      </ul>
+
+      <h5 class="text-purple text-sm font-mono-code text-uppercase mb-3 fw-bold">Technology Stack:</h5>
+      <div class="d-flex flex-wrap gap-2 mb-4">
+        <span class="tech-pill" *ngFor="let tech of selectedProject.technologies">{{ tech }}</span>
+      </div>
+
+      <div class="d-flex gap-3 pt-3 border-top border-secondary border-opacity-25">
+        <a [href]="selectedProject.githubUrl" target="_blank" rel="noopener noreferrer" class="btn-primary-glow flex-grow-1">
+          <i class="bi bi-github"></i> Open on GitHub
+        </a>
+        <button (click)="closeProjectDetails()" class="btn-glass">
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+
+</section>

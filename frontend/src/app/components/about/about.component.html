@@ -1,0 +1,82 @@
+<section id="about" class="about-section section-padding">
+  <div class="container-xl">
+    
+    <!-- Section Header -->
+    <div class="text-center mb-5">
+      <div class="section-tag">
+        <i class="bi bi-person-badge-fill"></i>
+        <span>Get To Know Me</span>
+      </div>
+      <h2 class="section-title">
+        About <span class="gradient-text">Me</span>
+      </h2>
+      <p class="section-subtitle">
+        Bridging frontend craftsmanship with full-stack engineering and data-driven intelligence.
+      </p>
+    </div>
+
+    <!-- Main About Content -->
+    <div class="row g-4 align-items-center mb-5">
+      
+      <!-- Bio Summary Column -->
+      <div class="col-lg-6">
+        <div class="about-bio-box glass-card p-4 p-md-5">
+          <h3 class="bio-heading mb-4">
+            Passionate Developer Building Scalable &amp; Interactive Digital Solutions
+          </h3>
+
+          <p class="bio-text mb-3">
+            I am a passionate IT professional with a strong interest in web development, software technologies and data-driven solutions. I enjoy building responsive and user-friendly applications and continuously improving my technical skills.
+          </p>
+
+          <p class="bio-text mb-4">
+            I have experience in frontend development and knowledge of full-stack technologies including <span class="highlight-cyan">Angular</span>, <span class="highlight-cyan">Node.js</span>, <span class="highlight-purple">Express.js</span>, and <span class="highlight-emerald">MongoDB</span>.
+          </p>
+
+          <!-- Key Highlights Grid -->
+          <div class="highlights-grid">
+            <div class="highlight-item" *ngFor="let item of highlights">
+              <i class="bi {{ item.icon }} highlight-icon"></i>
+              <div>
+                <div class="highlight-label">{{ item.label }}</div>
+                <div class="highlight-val">{{ item.value }}</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-4 border-top border-secondary border-opacity-25 d-flex flex-wrap gap-3">
+            <a href="#skills" class="btn-outline-glow">
+              <i class="bi bi-cpu-fill"></i> Explore Skills
+            </a>
+            <a href="#experience" class="btn-glass">
+              <i class="bi bi-calendar-check-fill text-cyan"></i> View Experience
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3D Interactive Stats Cards Column -->
+      <div class="col-lg-6">
+        <div class="row g-3">
+          <div class="col-sm-6" *ngFor="let card of stats">
+            <div class="stat-card glass-card card-3d p-4 h-100 {{ card.gradient }}">
+              <div class="stat-icon-wrapper mb-3">
+                <i class="bi {{ card.icon }}"></i>
+              </div>
+              <h4 class="stat-title mb-1">{{ card.title }}</h4>
+              <p class="stat-subtitle mb-3 text-muted text-sm">{{ card.subtitle }}</p>
+              
+              <div class="stat-tags d-flex flex-wrap gap-1">
+                <span class="badge-pill-mini" *ngFor="let tag of card.tags">
+                  {{ tag }}
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>

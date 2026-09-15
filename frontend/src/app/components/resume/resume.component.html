@@ -1,0 +1,62 @@
+<section id="resume-section" class="resume-section section-padding">
+  <div class="container-xl">
+    
+    <!-- Big Glassmorphic Call To Action Card -->
+    <div class="resume-cta-box glass-card card-3d p-4 p-md-5 text-center position-relative overflow-hidden">
+      
+      <!-- Background Cyber Grid / Glow -->
+      <div class="cta-glow-mesh"></div>
+
+      <div class="position-relative z-2 max-w-700 mx-auto">
+        
+        <div class="section-tag mb-3">
+          <i class="bi bi-file-earmark-person-fill"></i>
+          <span>Curriculum Vitae</span>
+        </div>
+
+        <h2 class="cta-title text-white mb-3">
+          Interested in <span class="gradient-text">working with me?</span>
+        </h2>
+
+        <p class="cta-subtitle text-light mb-4">
+          I am currently open to full-time Frontend &amp; Full Stack Software Engineering opportunities, project collaborations, and innovative engineering challenges.
+        </p>
+
+        <!-- Quick Resume Summary Chips -->
+        <div class="d-flex flex-wrap justify-content-center gap-2 mb-5">
+          <span class="tech-pill"><i class="bi bi-check2 text-cyan"></i> 1+ Year Industry Experience (Suguna Foods)</span>
+          <span class="tech-pill"><i class="bi bi-check2 text-purple"></i> MCA in Data Science (MIT ADT Pune 2026)</span>
+          <span class="tech-pill"><i class="bi bi-check2 text-success"></i> Angular &amp; Node.js Full Stack</span>
+        </div>
+
+        <!-- Download Action Button -->
+        <div class="d-flex flex-column flex-sm-row align-items-center justify-content-center gap-3">
+          <button (click)="downloadResume()" 
+                  [disabled]="isDownloading"
+                  class="btn-primary-glow btn-lg px-5 py-3 fs-6">
+            <i class="bi" [class.bi-file-earmark-arrow-down-fill]="!isDownloading" [class.bi-arrow-repeat]="isDownloading" [class.animate-spin]="isDownloading"></i>
+            <span>{{ isDownloading ? 'PREPARING RESUME...' : 'DOWNLOAD MY RESUME' }}</span>
+          </button>
+
+          <a href="#contact" class="btn-glass btn-lg px-4 py-3 fs-6">
+            <i class="bi bi-chat-quote-fill text-cyan"></i>
+            <span>Let's Discuss Opportunities</span>
+          </a>
+        </div>
+
+        <!-- Success notification feedback -->
+        <div *ngIf="downloadSuccess" class="alert alert-success mt-4 d-inline-flex align-items-center gap-2 py-2 px-4 rounded-pill shadow">
+          <i class="bi bi-check-circle-fill"></i>
+          <span>Resume PDF download started successfully!</span>
+        </div>
+
+        <div class="mt-4 text-dim text-xs font-mono-code">
+          <i class="bi bi-filetype-pdf text-danger me-1"></i> Format: PDF (A4) • File: Shubham_Bhavar_Resume.pdf • Updated 2026
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>

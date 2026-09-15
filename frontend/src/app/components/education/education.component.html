@@ -1,0 +1,78 @@
+<section id="education" class="education-section section-padding">
+  <div class="container-xl">
+    
+    <!-- Section Header -->
+    <div class="text-center mb-5">
+      <div class="section-tag">
+        <i class="bi bi-mortarboard-fill"></i>
+        <span>Academic Background</span>
+      </div>
+      <h2 class="section-title">
+        Education &amp; <span class="gradient-text">Qualifications</span>
+      </h2>
+      <p class="section-subtitle">
+        My formal academic journey providing strong theoretical foundations in computer science and data analytics.
+      </p>
+    </div>
+
+    <!-- Education Cards Grid -->
+    <div class="row g-4 justify-content-center">
+      <div class="col-lg-4 col-md-6" *ngFor="let edu of educationList">
+        <div class="education-card glass-card card-3d p-4 p-xl-5 h-100 d-flex flex-column justify-content-between">
+          
+          <div>
+            <!-- Header with Degree Level & Year -->
+            <div class="d-flex align-items-center justify-content-between mb-3">
+              <span class="edu-badge font-mono-code" [style.border-color]="edu.accentColor + '55'" [style.color]="edu.accentColor">
+                {{ edu.badge }}
+              </span>
+              <span class="year-tag font-mono-code">
+                <i class="bi bi-calendar3 me-1"></i> {{ edu.year }}
+              </span>
+            </div>
+
+            <!-- Icon and Degree Name -->
+            <div class="d-flex align-items-start gap-3 mb-3">
+              <div class="edu-icon-box" [style.background]="edu.accentColor + '15'" [style.border-color]="edu.accentColor + '44'">
+                <i class="bi {{ edu.icon }}" [style.color]="edu.accentColor"></i>
+              </div>
+              <div>
+                <h4 class="degree-title text-white mb-1">{{ edu.degree }}</h4>
+                <div *ngIf="edu.score" class="score-pill d-inline-block">
+                  Score: <strong>{{ edu.score }}</strong>
+                </div>
+              </div>
+            </div>
+
+            <!-- University / College Info -->
+            <div class="institution-box mb-3">
+              <h5 class="institution-name text-light mb-1">{{ edu.institution }}</h5>
+              <p class="location-text text-muted text-sm m-0">
+                <i class="bi bi-geo-alt-fill text-cyan me-1"></i> {{ edu.location }}
+              </p>
+            </div>
+
+            <!-- Highlights -->
+            <ul class="highlights-list list-unstyled mb-0">
+              <li *ngFor="let h of edu.highlights" class="d-flex align-items-start gap-2 mb-2 text-muted text-sm">
+                <i class="bi bi-check-circle-fill text-cyan mt-1 flex-shrink-0"></i>
+                <span>{{ h }}</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Card Footer Status -->
+          <div class="card-status-bar pt-3 mt-4 border-top border-secondary border-opacity-25 d-flex align-items-center justify-content-between">
+            <span class="status-indicator d-flex align-items-center gap-2 text-xs font-mono-code text-muted">
+              <span class="status-ping" [style.background-color]="edu.accentColor"></span>
+              {{ edu.status }}
+            </span>
+            <i class="bi bi-arrow-up-right-circle text-cyan"></i>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>

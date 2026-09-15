@@ -1,0 +1,90 @@
+<section id="skills" class="skills-section section-padding">
+  <div class="container-xl">
+    
+    <!-- Section Header -->
+    <div class="text-center mb-5">
+      <div class="section-tag">
+        <i class="bi bi-cpu-fill"></i>
+        <span>Technical Arsenal</span>
+      </div>
+      <h2 class="section-title">
+        Skills &amp; <span class="gradient-text">Expertise</span>
+      </h2>
+      <p class="section-subtitle">
+        A comprehensive overview of my programming languages, frontend frameworks, backend runtimes, and databases.
+      </p>
+    </div>
+
+    <!-- Category Filter Tabs -->
+    <div class="d-flex justify-content-center mb-5">
+      <div class="skill-category-tabs d-flex flex-wrap justify-content-center gap-2 p-1">
+        <button *ngFor="let cat of categories" 
+                class="category-tab-btn" 
+                [class.active]="activeTab === cat.id"
+                (click)="setTab(cat.id)">
+          <i class="bi {{ cat.icon }}"></i>
+          <span>{{ cat.label }}</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Interactive 3D Skills Grid -->
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-4" *ngFor="let skill of filteredSkills">
+        <div class="skill-card glass-card card-3d p-4 h-100">
+          
+          <div class="d-flex align-items-center justify-content-between mb-3">
+            <div class="skill-icon-box" [style.border-color]="skill.color + '55'" [style.background]="skill.color + '15'">
+              <i class="bi {{ skill.icon }}" [style.color]="skill.color"></i>
+            </div>
+            <span class="skill-level-badge" [ngClass]="{
+              'level-advanced': skill.level === 'Advanced',
+              'level-proficient': skill.level === 'Proficient',
+              'level-intermediate': skill.level === 'Intermediate'
+            }">
+              {{ skill.level }}
+            </span>
+          </div>
+
+          <h4 class="skill-name mb-2 text-white">{{ skill.name }}</h4>
+          <p class="skill-desc mb-3 text-muted text-sm">{{ skill.description }}</p>
+
+          <!-- Strength Meter Bar -->
+          <div class="skill-meter-container">
+            <div class="skill-meter-track">
+              <div class="skill-meter-fill" [ngClass]="{
+                'fill-advanced': skill.level === 'Advanced',
+                'fill-proficient': skill.level === 'Proficient',
+                'fill-intermediate': skill.level === 'Intermediate'
+              }"></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Floating Tech Cloud Showcase Banner -->
+    <div class="tech-cloud-banner glass-card p-4 mt-5 text-center">
+      <div class="row align-items-center">
+        <div class="col-lg-3 text-lg-start mb-3 mb-lg-0">
+          <span class="text-xs text-uppercase font-mono-code fw-bold text-cyan">Tech Focus:</span>
+          <h5 class="m-0 text-white font-weight-bold">Full Stack Synergy</h5>
+        </div>
+        <div class="col-lg-9">
+          <div class="d-flex flex-wrap justify-content-center justify-content-lg-end gap-2">
+            <span class="tech-pill"><i class="bi bi-filetype-tsx text-danger"></i> Angular</span>
+            <span class="tech-pill"><i class="bi bi-filetype-tsx text-primary"></i> TypeScript</span>
+            <span class="tech-pill"><i class="bi bi-server text-success"></i> Node.js</span>
+            <span class="tech-pill"><i class="bi bi-diagram-2-fill text-cyan"></i> Express.js</span>
+            <span class="tech-pill"><i class="bi bi-database-fill text-success"></i> MongoDB</span>
+            <span class="tech-pill"><i class="bi bi-bootstrap-fill text-purple"></i> Bootstrap</span>
+            <span class="tech-pill"><i class="bi bi-cup-hot-fill text-warning"></i> Java</span>
+            <span class="tech-pill"><i class="bi bi-git text-danger"></i> Git/GitHub</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>

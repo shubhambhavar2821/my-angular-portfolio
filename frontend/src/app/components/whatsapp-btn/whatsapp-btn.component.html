@@ -1,0 +1,29 @@
+<aside class="floating-whatsapp-container" aria-label="WhatsApp quick connect">
+  
+  <!-- Interactive Tooltip Banner -->
+  <div class="whatsapp-tooltip glass-card" *ngIf="showTooltip">
+    <div class="d-flex align-items-center justify-content-between gap-2">
+      <div class="d-flex align-items-center gap-2">
+        <span class="online-indicator"></span>
+        <span class="tooltip-text font-mono-code text-xs fw-bold">Chat directly with Shubham</span>
+      </div>
+      <button class="tooltip-close-btn" (click)="closeTooltip()" aria-label="Close notification">
+        <i class="bi bi-x"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- Pulsating 3D Action Floating Button -->
+  <a [href]="whatsappUrl" 
+     target="_blank" 
+     rel="noopener noreferrer" 
+     class="whatsapp-floating-action"
+     aria-label="Connect on WhatsApp (+91 9890982446)">
+    
+    <div class="pulse-ring"></div>
+    <div class="btn-inner">
+      <i class="bi bi-whatsapp"></i>
+    </div>
+  </a>
+
+</aside>

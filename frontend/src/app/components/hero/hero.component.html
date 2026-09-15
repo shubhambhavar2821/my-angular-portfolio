@@ -1,0 +1,133 @@
+<section id="hero" class="hero-section position-relative d-flex align-items-center">
+  <!-- Three.js Interactive 3D WebGL Background Canvas -->
+  <canvas #threeCanvas class="three-canvas"></canvas>
+
+  <!-- Ambient Light Spotlights -->
+  <div class="hero-glow-sphere cyan-glow"></div>
+  <div class="hero-glow-sphere purple-glow"></div>
+
+  <div class="container-xl position-relative z-2 py-5">
+    <div class="row align-items-center min-vh-100 pt-5 pt-lg-0">
+      
+      <!-- Left Column: Hero Content & Animated Typography -->
+      <div class="col-lg-7 text-start">
+        
+        <!-- Status Badge -->
+        <div class="status-badge mb-3 d-inline-flex align-items-center gap-2">
+          <span class="status-dot"></span>
+          <span class="status-text">Available for Full-time Roles &amp; Projects</span>
+        </div>
+
+        <!-- Greeting -->
+        <h2 class="hero-greeting mb-2">
+          Hi, I'm <span class="gradient-text">Shubham Bhavar</span> 👋
+        </h2>
+
+        <!-- Animated Typing Role Display -->
+        <div class="typewriter-container mb-3 d-flex align-items-center">
+          <span class="code-bracket me-2">&lt;</span>
+          <span class="typed-text">{{ currentRole }}</span>
+          <span class="cursor-blink">|</span>
+          <span class="code-bracket ms-2">/&gt;</span>
+        </div>
+
+        <!-- Tagline -->
+        <p class="hero-tagline mb-4">
+          "I build modern, scalable and user-friendly digital experiences."
+        </p>
+
+        <!-- Brief intro highlights -->
+        <p class="hero-subtext mb-4 text-muted">
+          Passionate developer specializing in <strong class="text-white">Angular</strong>, <strong class="text-white">Node.js</strong>, <strong class="text-white">Express</strong>, <strong class="text-white">MongoDB</strong>, and modern 3D web UI experiences. Based in Pune, Maharashtra.
+        </p>
+
+        <!-- CTA Buttons -->
+        <div class="d-flex flex-wrap align-items-center gap-3 mb-5">
+          <a href="#projects" class="btn-primary-glow">
+            <i class="bi bi-code-slash"></i>
+            <span>View My Work</span>
+          </a>
+
+          <button (click)="downloadResume()" class="btn-glass">
+            <i class="bi bi-file-earmark-arrow-down-fill text-cyan"></i>
+            <span>Download Resume</span>
+          </button>
+
+          <a href="#contact" class="btn-glass">
+            <i class="bi bi-chat-dots-fill text-purple"></i>
+            <span>Contact Me</span>
+          </a>
+        </div>
+
+        <!-- Social & Quick Links -->
+        <div class="d-flex align-items-center gap-4 pt-2">
+          <span class="text-dim text-uppercase font-mono-code text-xs fw-bold tracking-wider">Connect:</span>
+          
+          <div class="social-links-row d-flex align-items-center gap-3">
+            <a href="https://github.com/shubhambhavar2821" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="GitHub">
+              <i class="bi bi-github"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/shubham-bhavar-a3506025b/" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="LinkedIn">
+              <i class="bi bi-linkedin"></i>
+            </a>
+            <a href="mailto:shubhambhavar2821@gmail.com" class="social-icon-btn" aria-label="Email">
+              <i class="bi bi-envelope-fill"></i>
+            </a>
+            <a href="https://wa.me/919890982446?text=Hello%20Shubham%2C%20I%20visited%20your%20portfolio%20and%20would%20like%20to%20connect%20with%20you." target="_blank" rel="noopener noreferrer" class="social-icon-btn whatsapp-highlight" aria-label="WhatsApp">
+              <i class="bi bi-whatsapp"></i>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Right Column: Interactive 3D Developer Floating Glass Card -->
+      <div class="col-lg-5 d-none d-lg-block">
+        <div class="developer-hero-card glass-card card-3d p-4">
+          <div class="card-header-bar d-flex align-items-center justify-content-between pb-3 mb-3 border-bottom border-secondary border-opacity-25">
+            <div class="window-controls d-flex gap-2">
+              <span class="dot red"></span>
+              <span class="dot yellow"></span>
+              <span class="dot green"></span>
+            </div>
+            <span class="badge bg-dark bg-opacity-75 text-cyan font-mono-code px-2 py-1 border border-cyan border-opacity-25 text-xs">
+              <i class="bi bi-terminal me-1"></i>shubham.ts
+            </span>
+          </div>
+
+          <!-- Code Snippet with escaped braces -->
+          <div class="code-snippet font-mono-code text-sm">
+            <p class="m-0 text-muted"><span class="text-purple">const</span> developer = &#123;</p>
+            <p class="m-0 ps-3 text-light">name: <span class="text-cyan">'Shubham Bhavar'</span>,</p>
+            <p class="m-0 ps-3 text-light">title: <span class="text-cyan">'Full Stack &amp; Frontend Developer'</span>,</p>
+            <p class="m-0 ps-3 text-light">location: <span class="text-cyan">'Pune, MH, India'</span>,</p>
+            <p class="m-0 ps-3 text-light">education: <span class="text-purple">'MCA (Data Science) 2026'</span>,</p>
+            <p class="m-0 ps-3 text-light">techStack: [</p>
+            <p class="m-0 ps-5 text-emerald">'Angular', 'TypeScript', 'Node.js',</p>
+            <p class="m-0 ps-5 text-emerald">'Express.js', 'MongoDB', 'Bootstrap'</p>
+            <p class="m-0 ps-3 text-light">],</p>
+            <p class="m-0 ps-3 text-light">passion: <span class="text-pink-accent">'Building Interactive 3D Web Apps'</span>,</p>
+            <p class="m-0 ps-3 text-light">available: <span class="text-cyan">true</span></p>
+            <p class="m-0 text-muted">&#125;;</p>
+          </div>
+
+          <!-- Floating Badges on Card -->
+          <div class="floating-tech-badges mt-4 d-flex flex-wrap gap-2">
+            <span class="tech-badge-glow"><i class="bi bi-lightning-charge-fill text-warning me-1"></i> Fast Performance</span>
+            <span class="tech-badge-glow"><i class="bi bi-box-fill text-cyan me-1"></i> 3D Interactive UI</span>
+            <span class="tech-badge-glow"><i class="bi bi-shield-check text-success me-1"></i> Clean Code</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Scroll Down Indicator -->
+  <a href="#about" class="scroll-down-btn position-absolute bottom-0 start-50 translate-middle-x mb-4 text-decoration-none" aria-label="Scroll to About section">
+    <div class="mouse-icon">
+      <div class="wheel"></div>
+    </div>
+    <span class="scroll-text">Scroll Down</span>
+  </a>
+</section>

@@ -1,0 +1,82 @@
+<section id="experience" class="experience-section section-padding">
+  <div class="container-xl">
+    
+    <!-- Section Header -->
+    <div class="text-center mb-5">
+      <div class="section-tag">
+        <i class="bi bi-briefcase-fill"></i>
+        <span>Career Journey</span>
+      </div>
+      <h2 class="section-title">
+        Work <span class="gradient-text">Experience</span>
+      </h2>
+      <p class="section-subtitle">
+        Professional software engineering experience delivering real-world web applications.
+      </p>
+    </div>
+
+    <!-- Timeline Container -->
+    <div class="timeline-wrapper mx-auto">
+      <div class="timeline-item" *ngFor="let exp of experiences">
+        
+        <!-- Animated Glowing Node -->
+        <div class="timeline-node">
+          <div class="node-inner">
+            <i class="bi bi-code-slash"></i>
+          </div>
+          <div class="node-pulse"></div>
+        </div>
+
+        <!-- Experience Content Card -->
+        <div class="timeline-content glass-card card-3d p-4 p-md-5">
+          
+          <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 mb-3">
+            <div>
+              <span class="company-badge mb-2 d-inline-block">
+                <i class="bi bi-building me-1"></i> {{ exp.company }}
+              </span>
+              <h3 class="role-title text-white mb-1">{{ exp.role }}</h3>
+            </div>
+            
+            <div class="text-md-end">
+              <span class="duration-badge font-mono-code">
+                <i class="bi bi-calendar-event me-1"></i> {{ exp.duration }}
+              </span>
+              <div class="location-text text-muted text-sm mt-1">
+                <i class="bi bi-geo-alt me-1 text-cyan"></i> {{ exp.location }}
+              </div>
+            </div>
+          </div>
+
+          <p class="role-description text-light mb-4">
+            {{ exp.description }}
+          </p>
+
+          <h5 class="text-cyan text-sm text-uppercase font-mono-code mb-3 fw-bold">
+            <i class="bi bi-check2-circle me-1"></i> Key Responsibilities &amp; Impact:
+          </h5>
+
+          <ul class="achievements-list list-unstyled mb-4">
+            <li *ngFor="let item of exp.achievements" class="d-flex align-items-start gap-2 mb-2 text-muted">
+              <i class="bi bi-arrow-right-circle-fill text-purple mt-1 flex-shrink-0"></i>
+              <span>{{ item }}</span>
+            </li>
+          </ul>
+
+          <!-- Tech Stack Tags -->
+          <div class="pt-3 border-top border-secondary border-opacity-25">
+            <span class="text-xs text-uppercase font-mono-code text-dim d-block mb-2 fw-bold">Technologies Used:</span>
+            <div class="d-flex flex-wrap gap-2">
+              <span class="tech-pill" *ngFor="let tech of exp.technologies">
+                {{ tech }}
+              </span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
